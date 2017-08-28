@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.isaacparsons.fitnesstracker.AddGoalorWorkoutFragment"
+    android:background="#990000ff"
+    android:id="@+id/fragment_add_goal_or_workout_relative_layout">
+
+    <!-- TODO: Update blank fragment layout -->
+    <FrameLayout
+        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:id="@+id/fragment_add_goal_or_workout_frame_for_buttons"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/newworkout"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_new_workout_btn"
+                    android:padding="3dp"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:text="Add New Workout"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/newgoal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add new Goal"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#fff"
+                    android:padding="3dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:id="@+id/add_new_goal_btn"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>
