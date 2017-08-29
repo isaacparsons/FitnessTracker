@@ -31,7 +31,17 @@ public class WorkoutsApiCall {
     public String API_KEY = "3084427c243e9f7be5e428184d95390e6227c2ee";
 
     public Retrofit call() {
+        final OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request newRequest = chain.request().newBuilder()
+                        .header("Authorization", API_KEY)
+                        .build();
+                Response response = chain.proceed(newRequest);
 
+                return response;
+            }
+        }).build();
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -40,6 +50,7 @@ public class WorkoutsApiCall {
                 .baseUrl(BASE_URL)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(client)
                 .build();
         return retrofit;
     }

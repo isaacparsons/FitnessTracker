@@ -1,5 +1,7 @@
 package com.example.isaacparsons.fitnesstracker.Suggestions;
 
+import android.util.Log;
+
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -12,8 +14,7 @@ import retrofit2.http.Path;
  */
 
 public interface WorkoutInterface {
-    @Headers("Authorization: Token 3084427c243e9f7be5e428184d95390e6227c2ee")
-    @GET("{thing}/?format=api")
+    @GET("{thing}/?format=json")
     Observable<SuggestionClass> getTitles(
             @Path("thing") String exercise
 
